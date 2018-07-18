@@ -1,0 +1,25 @@
+defaultTasks 'clean', 'build'
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenLocal()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        mavenCentral()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    buildDir = "${rootDir}/build/${name}"
+
+}

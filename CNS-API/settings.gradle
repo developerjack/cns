@@ -1,2 +1,6 @@
 rootProject.name = 'CNS-API'
+include 'Registry'
+include 'AuthServer'
+include 'UserService'
+include 'CarService'
 
